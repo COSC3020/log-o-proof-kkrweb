@@ -40,19 +40,21 @@ Definition of big-O - $T(n) \in O(f(n)) \iff \exists c > 0, \exists n_0 \in \mat
 
 Theorem: $O(\log_2 n) = O(\log_5 n)$.
 
+
 Proof:
+
 
 First, we need to prove $O(\log_2 n) \subseteq O(\log_5 n)$. 
 
 Assume $T(n) \in O(\log_2 n)$. 
 
-By definition, there exists constant value c such that $c > 0$ and $n_0 \in \mathbb{N}$ such that for all $n \geq n_0$, $T(n) \leq c \log_2 n$.
+By definition, there exists constant value c such that $c > 0$ and $n_0 \in \mathbb{N}$ such that for all $n \geq n_0$, $T(n) \leq c \log_2 n$ is true.
 
 Using change of base of logs, $\log_2 n = \frac{\log_5 n}{\log_5 2}$, this can be rewritten as:
 
 $T(n) \leq c * \frac{\log_5 n}{\log_5 2}$. 
 
-//
+Since $\log_5 2$ is a positive constant, this shows $T(n) \leq C \log_5 n$ for some constant c $C > 0$ and all $n \geq n_0$.
 
 This proves $T(n) \in O(\log_5 n)$.
 
@@ -62,9 +64,9 @@ Assume $T(n) \in O(\log_5 n)$.
 
 Then there exists $c > 0$ and $n_0 \in \mathbb{N}$ with $T(n) \leq c \log_5 n$ for all $n \geq n_0$.
 
-Applying the identity $\log_5 n = \frac{\log_2 n}{\log_2 5}$, we obtain $T(n) \leq c * \frac{\log_2 n}{\log_2 5}$. 
+Applying log change of base again, $\log_5 n = \frac{\log_2 n}{\log_2 5}$, we obtain $T(n) \leq c * \frac{\log_2 n}{\log_2 5}$. 
 
-//
+Since $\log_2 5$ is a positive constant, this shows $T(n) \leq C \log_2 n$ for some $C > 0$ and all $n \geq n_0$, establishing $T(n) \in O(\log_2 n)$.
 
 Since it has been shown that both $O(\log_2 n) \subseteq O(\log_5 n)$, and $O(\log_5 n) \subseteq O(\log_2 n)$, it is proven that $O(\log_2 n) = O(\log_5 n)$.
 
@@ -80,5 +82,8 @@ Plagiarism Acknowledgement: I certify that I have listed all sources used to com
 
 Citations:
 
-Provided: https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/writing-mathematical-expressions
+Provided notation help:
+“Writing Mathematical Expressions.” GitHub Docs, docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/writing-mathematical-expressions.
 
+Though I didn't end up using induction, still was considered on how it could somehow play a role in an asymptotic proof: 
+“Applying Mathematical Induction in Algorithm Design – AlgoCademy Blog.” Algocademy.com, 2025, algocademy.com/blog/applying-mathematical-induction-in-algorithm-design/. Accessed 9 Apr. 2025.
